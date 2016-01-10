@@ -17,5 +17,5 @@ ul {margin:0;padding: 0;float: left;}
 li {list-style: none;}
 #action {width:100%;border-top: 1px solid #dbdbdb;margin-top:5px;}
 #action li {float: left;width:33.3333%;text-align: center;display: inline-block;height:30px;line-height:30px;color: #31b6e7;cursor:pointer}
-.select {background: #31b6e7;}
+.select {background: #31b6e7;color:#fff;}
 li:hover {cursor:pointer;}
