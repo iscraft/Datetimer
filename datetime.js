@@ -167,7 +167,7 @@ $("body").on("click","#min li",function(){
 });
 $("body").on("click","#action li",function(){
 	if ($(this).data('action')=='cancel'){
-		$('#box').hide();
+		$('#box').hide().remove();
 	}
 	if ($(this).data('action')=='now'){
 		var now		= new Date();
@@ -179,11 +179,11 @@ $("body").on("click","#action li",function(){
 		var min		= now.getMinutes();
 		min			= min<10?'0'+min:min;
 		$('#date').text(year+'-'+month+'-'+day+' '+hour+':'+min);
-		$('#box').hide();
+		$('#box').hide().remove();
 		default_select();
 	}
 	if ($(this).data('action')=='ok'){
 		$('#date').text(year_tmp+'-'+month_tmp+'-'+day_tmp+' '+hour_tmp+':'+min_tmp);
-		$('#box').hide();
+		$('#box').hide().remove();
 	}
 });
