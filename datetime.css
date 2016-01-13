@@ -1,7 +1,5 @@
-#date {height:30px;display: inline-block;}
-#datetime {padding:0 10px;}
-#box {position: absolute;width:300px;display:none;background: #F5F5F5;-webkit-border-radius:3px;-moz-border-radius:3px;border-radius: 3px; box-shadow : 0 0 0 1px #dbdbdb;}
 #time_box {height:30px;line-height:30px;color: #31b6e7;text-align: center;border-bottom: 1px solid #dbdbdb;}
+#date_box {position: absolute;width:300px;display:none;background: #F5F5F5;-webkit-border-radius:3px;-moz-border-radius:3px;border-radius: 3px; box-shadow : 0 0 0 1px #dbdbdb;}
 #year {width:40%;background-color: #DDCFE6;}
 #month {width:60%;background-color: #E4F1D7;}
 #year,#month {float: left;}
@@ -13,8 +11,8 @@
 #hour {background-color: #FFFED7;}
 #hour li {width:25px;height:25px;display: inline-block;line-height:25px;vertical-align: middle;text-align: center;-webkit-border-radius:12.5px;-moz-border-radius:12.5px;border-radius: 12.5px;cursor:pointer}
 #min li {width:25px;height:25px;display: inline-block;line-height:25px;vertical-align: middle;text-align: center;-webkit-border-radius:12.5px;-moz-border-radius:12.5px;border-radius: 12.5px;cursor:pointer}
-ul {margin:0;padding: 0;float: left;}
-li {list-style: none;}
+#date_box ul {margin:0;padding: 0;float: left;}
+#date_box li {list-style: none;}
 #action {width:100%;border-top: 1px solid #dbdbdb;margin-top:5px;}
 #action li {float: left;width:33.3333%;text-align: center;display: inline-block;height:30px;line-height:30px;color: #31b6e7;cursor:pointer}
 .select {background: #31b6e7;color:#fff;}

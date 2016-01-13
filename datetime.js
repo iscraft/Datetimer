@@ -57,17 +57,18 @@ function default_select(){
 	$('#time_box').text(year_tmp+'-'+month_tmp+'-'+day_tmp+' '+hour_tmp+':'+min_tmp);
 }
 //
-function init (){
-	$('#date').after('<div id="box"><div id="time_box"></div><ul id="year"></ul><ul id="month"></ul><ul id="day"></ul><ul id="hour"></ul><ul id="min"></ul><ul id="action"><li data-action="ok">确定</li><li data-action="now">现在</li><li data-action="cancel">取消</li></ul></div>');
-	$('#box').show();
-	$('#box').css({"left":($("#datetime").width()-300)/2+10,"top":"10px"});
+function init (e){
+	window.e	= e;
+	$(e).after('<div id="date_box"><div id="time_box"></div><ul id="year"></ul><ul id="month"></ul><ul id="day"></ul><ul id="hour"></ul><ul id="min"></ul><ul id="action"><li data-action="ok">确定</li><li data-action="now">现在</li><li data-action="cancel">取消</li></ul></div>');
+	$('#date_box').show();
+	$('#date_box').css({"left":($(".form-group").width()-300)/2+10,"top":"30%"});
 	year_tmp	= undefined;
 	month_tmp	= undefined;
 	day_tmp		= undefined;
 	hour_tmp	= undefined;
 	min_tmp		= undefined;
 	//
-	var dtstr	= $('#date').text();
+	var dtstr	= $(window.e).text();
 	if (dtstr){
 		var now	= new Date(dtstr.replace(/-/g,"/"));
 	}else{
@@ -75,6 +76,7 @@ function init (){
 	}
 	year		= now.getFullYear();
 	month		= now.getMonth()+1;
+	month		= month<10?'0'+month:month;
 	day			= now.getDate();
 	day			= day<10?'0'+day:day;
 	hour		= now.getHours();
@@ -108,8 +110,9 @@ for(var i=1;i<=3;i++){
 year_content=afya+after_year;
 
 //
-var month_content = '<li data-sn="1">1</li>';
+var month_content = '<li data-sn="01">01</li>';
 for(var i=2;i<=12;i++){
+	i=i<10?'0'+i:i;
 	month_content+=("<li data-sn="+i+">"+i+"</li>");
 }
 //
@@ -167,7 +170,7 @@ $("body").on("click","#min li",function(){
 });
 $("body").on("click","#action li",function(){
 	if ($(this).data('action')=='cancel'){
-		$('#box').hide().remove();
+		$('#date_box').hide().remove();
 	}
 	if ($(this).data('action')=='now'){
 		var now		= new Date();
@@ -178,12 +181,12 @@ $("body").on("click","#action li",function(){
 		var hour	= now.getHours();
 		var min		= now.getMinutes();
 		min			= min<10?'0'+min:min;
-		$('#date').text(year+'-'+month+'-'+day+' '+hour+':'+min);
-		$('#box').hide().remove();
+		$(window.e).text(year+'-'+month+'-'+day+' '+hour+':'+min);
+		$('#date_box').hide().remove();
 		default_select();
 	}
 	if ($(this).data('action')=='ok'){
-		$('#date').text(year_tmp+'-'+month_tmp+'-'+day_tmp+' '+hour_tmp+':'+min_tmp);
-		$('#box').hide().remove();
+		$(window.e).text(year_tmp+'-'+month_tmp+'-'+day_tmp+' '+hour_tmp+':'+min_tmp);
+		$('#date_box').hide().remove();
 	}
 });
