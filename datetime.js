@@ -66,7 +66,7 @@ function init (e){
 $("body").on("click","#time",function(){
 	$('#date_box').show();
 	var box_width;
-	box_width	=$(window.e).parent().width()==$('body').width()?($(window.e).parent().width()-300)/2:($(window.e).parent().width()-300)/2+10;
+	box_width	= $(window.e).parent().width()==$('body').width()?($(window.e).parent().width()-300)/2:($(window.e).parent().width()-300)/2+10;
 
 	$('#date_box').css({"left":box_width,"top":"30%"});
 	year_tmp	= undefined;
