@@ -17,7 +17,7 @@ function default_select(){
 	if (year_tmp==undefined){
 		var year_e=$('#year li[data-sn='+year+']');
 		$(year_e).addClass('select');
-		year_tmp=year;
+		year_tmp	= year;
 	}else{
 		var year_e=$('#year li[data-sn='+year_tmp+']');
 		$(year_e).addClass('select');
@@ -25,7 +25,7 @@ function default_select(){
 	if (month_tmp==undefined){
 		var month_e=$('#month li[data-sn='+month+']');
 		$(month_e).addClass('select');
-		month_tmp=month;
+		month_tmp	= month;
 	}else{
 		var month_e=$('#month li[data-sn='+month_tmp+']');
 		$(month_e).addClass('select');
@@ -33,7 +33,7 @@ function default_select(){
 	if (day_tmp==undefined){
 		var day_e=$('#day li[data-sn='+day+']');
 		$(day_e).addClass('select');
-		day_tmp=day;
+		day_tmp		= day;
 	}else{
 		var day_e=$('#day li[data-sn='+day_tmp+']');
 		$(day_e).addClass('select');
@@ -41,7 +41,7 @@ function default_select(){
 	if (hour_tmp==undefined){
 		var hour_e=$('#hour li[data-sn='+hour+']');
 		$(hour_e).addClass('select');
-		hour_tmp=hour;
+		hour_tmp	= hour;
 	}else{
 		var hour_e=$('#hour li[data-sn='+hour_tmp+']');
 		$(hour_e).addClass('select');
@@ -49,7 +49,7 @@ function default_select(){
 	if (min_tmp==undefined){
 		var min_e=$('#min li[data-sn='+min+']');
 		$(min_e).addClass('select');
-		min_tmp=min;
+		min_tmp		= min;
 	}else{
 		var min_e=$('#min li[data-sn='+min_tmp+']');
 		$(min_e).addClass('select');
@@ -65,7 +65,10 @@ function init (e){
 }
 $("body").on("click","#time",function(){
 	$('#date_box').show();
-	$('#date_box').css({"left":($(window.e).parent().width()-300)/2+10,"top":"30%"});
+	var box_width;
+	box_width	=$(window.e).parent().width()==$('body').width()?($(window.e).parent().width()-300)/2:($(window.e).parent().width()-300)/2+10;
+
+	$('#date_box').css({"left":box_width,"top":"30%"});
 	year_tmp	= undefined;
 	month_tmp	= undefined;
 	day_tmp		= undefined;
