@@ -19,7 +19,7 @@
 	<script src="datetime.js"></script>
 	<span id="time" name="time" style="width:auto;cursor:pointer" /><?=date("Y-m-d H:i")?></span>
 	<script>
-		init ('#time');
+	init ('#time');
 	</script>
 </body>
 </html>
