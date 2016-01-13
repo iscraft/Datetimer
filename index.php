@@ -12,17 +12,21 @@
 	<meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0,maximum-scale=1.0">
 	<link href="http://libs.baidu.com/bootstrap/3.0.3/css/bootstrap.css" rel="stylesheet">
 	<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
-	<link href="datetime.css" rel="stylesheet">
+
 </head>
 <body>
+<link href="datetime.css" rel="stylesheet">
+<script src="datetime.js"></script>
 	<div id="datetime">
 	<span name="date" id="date"><?=date("Y-m-d H:i")?></span>
 </div>
-<script src="datetime.js"></script>
+
 <script>
+$(function(){
 	$('#date').on('click',function(){
 		init();
 	});
+});
 </script>
 </body>
 </html>
