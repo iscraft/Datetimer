@@ -15,16 +15,11 @@
 
 </head>
 <body>
-<link href="datetime.css" rel="stylesheet">
-<script src="datetime.js"></script>
-	<div id="datetime">
-	<span name="date" id="date"><?=date("Y-m-d H:i")?></span>
-</div>
-
-<script>
-	$('#date').on('click',function(){
-		init(this);
-	});
-</script>
+	<link href="datetime.css" rel="stylesheet">
+	<script src="datetime.js"></script>
+	<span id="time" name="time" style="width:auto;cursor:pointer" /><?=date("Y-m-d H:i")?></span>
+	<script>
+		init ('#time');
+	</script>
 </body>
 </html>
