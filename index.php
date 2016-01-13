@@ -22,11 +22,9 @@
 </div>
 
 <script>
-$(function(){
 	$('#date').on('click',function(){
-		init();
+		init(this);
 	});
-});
 </script>
 </body>
 </html>
