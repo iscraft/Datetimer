@@ -65,7 +65,7 @@ function init (e){
 }
 $("body").on("click","#time",function(){
 	$('#date_box').show();
-	$('#date_box').css({"left":($(".form-group").width()-300)/2+10,"top":"30%"});
+	$('#date_box').css({"left":($(window.e).parent().width()-300)/2+10,"top":"30%"});
 	year_tmp	= undefined;
 	month_tmp	= undefined;
 	day_tmp		= undefined;
