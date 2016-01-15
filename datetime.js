@@ -1,3 +1,9 @@
+/*!
+* Datetimer - v0.2 (2016-01-15)
+* https://github.com/iscraft/Datetimer
+* Copyright 2005-2016 iscraft.com
+*/
+
 function getDaysInMonth(year,month){
 	month		= parseInt(month,10);
 	var temp	= new Date(year,month,0);
@@ -15,31 +21,31 @@ function getdayscontent(day_number){
 
 function default_select(){
 	if (year_tmp==undefined){
-		var year_e=$('#year li[data-sn='+year+']');
+		var year_e	= $('#year li[data-sn='+year+']');
 		$(year_e).addClass('select');
 		year_tmp	= year;
 	}else{
-		var year_e=$('#year li[data-sn='+year_tmp+']');
+		var year_e	=$('#year li[data-sn='+year_tmp+']');
 		$(year_e).addClass('select');
 	}
 	if (month_tmp==undefined){
-		var month_e=$('#month li[data-sn='+month+']');
+		var month_e	= $('#month li[data-sn='+month+']');
 		$(month_e).addClass('select');
 		month_tmp	= month;
 	}else{
-		var month_e=$('#month li[data-sn='+month_tmp+']');
+		var month_e	= $('#month li[data-sn='+month_tmp+']');
 		$(month_e).addClass('select');
 	}
 	if (day_tmp==undefined){
-		var day_e=$('#day li[data-sn='+day+']');
+		var day_e	= $('#day li[data-sn='+day+']');
 		$(day_e).addClass('select');
 		day_tmp		= day;
 	}else{
-		var day_e=$('#day li[data-sn='+day_tmp+']');
+		var day_e	= $('#day li[data-sn='+day_tmp+']');
 		$(day_e).addClass('select');
 	}
 	if (hour_tmp==undefined){
-		var hour_e=$('#hour li[data-sn='+hour+']');
+		var hour_e	= $('#hour li[data-sn='+hour+']');
 		$(hour_e).addClass('select');
 		hour_tmp	= hour;
 	}else{
@@ -47,11 +53,11 @@ function default_select(){
 		$(hour_e).addClass('select');
 	}
 	if (min_tmp==undefined){
-		var min_e=$('#min li[data-sn='+min+']');
+		var min_e	= $('#min li[data-sn='+min+']');
 		$(min_e).addClass('select');
 		min_tmp		= min;
 	}else{
-		var min_e=$('#min li[data-sn='+min_tmp+']');
+		var min_e	= $('#min li[data-sn='+min_tmp+']');
 		$(min_e).addClass('select');
 	}
 	var time_box_text	= window.time==true ? year_tmp+'-'+month_tmp+'-'+day_tmp+' '+hour_tmp+':'+min_tmp : year_tmp+'-'+month_tmp+'-'+day_tmp;
@@ -59,10 +65,10 @@ function default_select(){
 }
 //
 function init (e){
-	window.e	= e;
-	var time_str= $(window.e).text();
-	window.time	= time_str.indexOf(" ") >=0?true:false;
-	var time_element	= window.time== true ? '<ul id="hour"></ul><ul id="min"></ul>' : '';
+	window.e			= e;
+	var time_str		= $(window.e).text();
+	window.time			= time_str.indexOf(" ") >=0 ? true : false;
+	var time_element	= window.time == true ? '<ul id="hour"></ul><ul id="min"></ul>' : '';
 	$(e).before('<input type="hidden" name="date" id="date" value="">');
 	$('#date').val($(e).text());
 	$(e).after('<div id="date_box"><div id="time_box"></div><ul id="year"></ul><ul id="month"></ul><ul id="day"></ul>'+time_element+'<ul id="action"><li data-action="ok">确定</li><li data-action="now">现在</li><li data-action="cancel">取消</li></ul></div>');
@@ -193,14 +199,14 @@ $("body").on("click","#action li",function(){
 		var hour	= now.getHours();
 		var min		= now.getMinutes();
 		min			= min<10?'0'+min:min;
-		var now_datetime=window.time==true?year+'-'+month+'-'+day+' '+hour+':'+min:year+'-'+month+'-'+day;
+		var now_datetime = window.time==true ? year+'-'+month+'-'+day+' '+hour+':'+min : year+'-'+month+'-'+day;
 		$(window.e).text(now_datetime);
 		$('#date').val(now_datetime);
 		$('#date_box').hide();
 		default_select();
 	}
 	if ($(this).data('action')=='ok'){
-		var select_datetime=window.time==true?year_tmp+'-'+month_tmp+'-'+day_tmp+' '+hour_tmp+':'+min_tmp:year_tmp+'-'+month_tmp+'-'+day_tmp;
+		var select_datetime = window.time==true ? year_tmp+'-'+month_tmp+'-'+day_tmp+' '+hour_tmp+':'+min_tmp : year_tmp+'-'+month_tmp+'-'+day_tmp;
 		$(window.e).text(select_datetime);
 		$('#date').val(select_datetime);
 		$('#date_box').hide();
