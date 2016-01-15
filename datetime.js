@@ -54,14 +54,18 @@ function default_select(){
 		var min_e=$('#min li[data-sn='+min_tmp+']');
 		$(min_e).addClass('select');
 	}
-	$('#time_box').text(year_tmp+'-'+month_tmp+'-'+day_tmp+' '+hour_tmp+':'+min_tmp);
+	var time_box_text	= window.time==true ? year_tmp+'-'+month_tmp+'-'+day_tmp+' '+hour_tmp+':'+min_tmp : year_tmp+'-'+month_tmp+'-'+day_tmp;
+	$('#time_box').text(time_box_text);
 }
 //
 function init (e){
 	window.e	= e;
+	var time_str= $(window.e).text();
+	window.time	= time_str.indexOf(" ") >=0?true:false;
+	var time_element	= window.time== true ? '<ul id="hour"></ul><ul id="min"></ul>' : '';
 	$(e).before('<input type="hidden" name="date" id="date" value="">');
 	$('#date').val($(e).text());
-	$(e).after('<div id="date_box"><div id="time_box"></div><ul id="year"></ul><ul id="month"></ul><ul id="day"></ul><ul id="hour"></ul><ul id="min"></ul><ul id="action"><li data-action="ok">确定</li><li data-action="now">现在</li><li data-action="cancel">取消</li></ul></div>');
+	$(e).after('<div id="date_box"><div id="time_box"></div><ul id="year"></ul><ul id="month"></ul><ul id="day"></ul>'+time_element+'<ul id="action"><li data-action="ok">确定</li><li data-action="now">现在</li><li data-action="cancel">取消</li></ul></div>');
 }
 $("body").on("click","#time",function(){
 	$('#date_box').show();
@@ -189,14 +193,14 @@ $("body").on("click","#action li",function(){
 		var hour	= now.getHours();
 		var min		= now.getMinutes();
 		min			= min<10?'0'+min:min;
-		var now_datetime=year+'-'+month+'-'+day+' '+hour+':'+min;
+		var now_datetime=window.time==true?year+'-'+month+'-'+day+' '+hour+':'+min:year+'-'+month+'-'+day;
 		$(window.e).text(now_datetime);
 		$('#date').val(now_datetime);
 		$('#date_box').hide();
 		default_select();
 	}
 	if ($(this).data('action')=='ok'){
-		var select_datetime=year_tmp+'-'+month_tmp+'-'+day_tmp+' '+hour_tmp+':'+min_tmp;
+		var select_datetime=window.time==true?year_tmp+'-'+month_tmp+'-'+day_tmp+' '+hour_tmp+':'+min_tmp:year_tmp+'-'+month_tmp+'-'+day_tmp;
 		$(window.e).text(select_datetime);
 		$('#date').val(select_datetime);
 		$('#date_box').hide();
