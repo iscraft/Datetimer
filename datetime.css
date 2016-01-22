@@ -3,17 +3,17 @@
 #year {width:40%;background-color: #DDCFE6;}
 #month {width:60%;background-color: #E4F1D7;}
 #year,#month {float: left;}
-#year li {height:30px;line-height:30px;width:33.3333%;float:left;text-align: center;cursor:pointer}
+#year li {height:30px;line-height:30px;width:33.3333%;float:left;text-align: center;}
 #month {text-align: right;}
-#month li{width:30px;height:30px;display: inline-block;line-height:30px;vertical-align: middle;text-align: center;cursor:pointer}
+#month li{width:30px;height:30px;display: inline-block;line-height:30px;vertical-align: middle;text-align: center;}
 #day {background-color: #FDE8CD;}
-#day li{width:30px;height:30px;display: inline-block;line-height:30px;vertical-align: middle;text-align: center;-webkit-border-radius:15px;-moz-border-radius:15px;border-radius: 15px;cursor:pointer}
+#day li{width:30px;height:30px;display: inline-block;line-height:30px;vertical-align: middle;text-align: center;-webkit-border-radius:15px;-moz-border-radius:15px;border-radius: 15px;}
 #hour {background-color: #FFFED7;}
-#hour li {width:25px;height:25px;display: inline-block;line-height:25px;vertical-align: middle;text-align: center;-webkit-border-radius:12.5px;-moz-border-radius:12.5px;border-radius: 12.5px;cursor:pointer}
-#min li {width:25px;height:25px;display: inline-block;line-height:25px;vertical-align: middle;text-align: center;-webkit-border-radius:12.5px;-moz-border-radius:12.5px;border-radius: 12.5px;cursor:pointer}
+#hour li {width:25px;height:25px;display: inline-block;line-height:25px;vertical-align: middle;text-align: center;-webkit-border-radius:12.5px;-moz-border-radius:12.5px;border-radius: 12.5px;}
+#min li {width:25px;height:25px;display: inline-block;line-height:25px;vertical-align: middle;text-align: center;-webkit-border-radius:12.5px;-moz-border-radius:12.5px;border-radius: 12.5px;}
 #date_box ul {margin:0;padding: 0;float: left;}
-#date_box li {list-style: none;}
+#date_box li {list-style: none;cursor:pointer}
 #action {width:100%;border-top: 1px solid #dbdbdb;margin-top:5px;}
-#action li {float: left;width:33.3333%;text-align: center;display: inline-block;height:30px;line-height:30px;color: #31b6e7;cursor:pointer}
+#action li {float: left;width:33.3333%;text-align: center;display: inline-block;height:30px;line-height:30px;color: #31b6e7;}
 .select {background: #31b6e7;color:#fff;}
 li:hover {cursor:pointer;}
