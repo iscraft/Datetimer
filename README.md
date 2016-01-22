@@ -8,6 +8,7 @@
 
 使用方法:
 ```html
+	<link href="datetime.css" rel="stylesheet">
 	<input name="time" id="time" readonly = "readonly" value="<?=date("Y-m-d")?>"/>
     <input name="etime" id="etime" readonly = "readonly" value="2017-01-16"/>
     <script src="datetime.js"></script>
@@ -20,6 +21,7 @@
 ```
 或者
 ```html
+	<link href="datetime.css" rel="stylesheet">
     <input name="time" id="time" readonly = "readonly" value="<?=date("Y-m-d H:i")?>"/>
     <input name="etime" id="etime" readonly = "readonly" value="2017-01-16 12:30"/>
     <script src="datetime.js"></script>
@@ -32,6 +34,7 @@
 ```
 或者
 ```html
+	<link href="datetime.css" rel="stylesheet">
     <input name="time" id="time" readonly = "readonly" value="<?=date("Y-m-d H:i")?>"/>
     <script src="datetime.js"></script>
     <script>
