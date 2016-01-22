@@ -7,10 +7,8 @@
 
 
 使用方法:
-```
-	<pre>
-	<code>
-    <input name="time" id="time" readonly = "readonly" value="<?=date("Y-m-d")?>"/>
+```html
+	<input name="time" id="time" readonly = "readonly" value="<?=date("Y-m-d")?>"/>
     <input name="etime" id="etime" readonly = "readonly" value="2017-01-16"/>
     <script src="datetime.js"></script>
     <script>
@@ -19,8 +17,6 @@
         $('#etime').datetimer();
     });
     </script>
-    </code>
-    </pre>
 ```
 或者
     <input name="time" id="time" readonly = "readonly" value="<?=date("Y-m-d H:i")?>"/>
