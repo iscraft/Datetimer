@@ -7,7 +7,6 @@
 	<meta name="author" content="" />
 	<meta name="keywords" content="" />
 	<meta name="description" content="" />
-	<meta charset="utf-8" />
 	<meta content="yes" name="apple-mobile-web-app-capable">
 	<meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0,maximum-scale=1.0">
 	<link href="http://libs.baidu.com/bootstrap/3.0.3/css/bootstrap.css" rel="stylesheet">
