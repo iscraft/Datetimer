@@ -15,13 +15,13 @@
 
 </head>
 <body>
-<link href="datetimer.css" rel="stylesheet">
-    <input name="time" id="time" readonly = "readonly" value="<?=date("Y-m-d H:i")?>"/>
-    <script src="datetimer.js"></script>
-    <script>
-    $(function(){
-        $('#time').datetimer();
-    });
-    </script>
+	<link href="datetimer.css" rel="stylesheet">
+	<input name="time" id="time" readonly = "readonly" value="<?=date("Y-m-d H:i")?>"/>
+	<script src="datetimer.js"></script>
+	<script>
+	$(function(){
+		$('#time').datetimer();
+	});
+	</script>
 </body>
 </html>
