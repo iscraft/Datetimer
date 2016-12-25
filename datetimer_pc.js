@@ -97,9 +97,12 @@ function default_select(year,month,day,hour,min){
 			$(this).click(onclick);
 			function onclick() {
 				$this = $(this);
+				$("#date_box").unwrap();
+				$('#date_box').hide();
+				$('#date_box').remove();
 				parent_id = $(this).attr("name")+"_"+$(this).attr("id");
 				$(this).wrap("<div id="+parent_id+"></div>");
-				$('#'+parent_id).css({'display':'inline-block','position':'relative','height':$(this).height()});
+				$('#'+parent_id).css({'display':'inline-block','position':'relative'});
 				box($this.val(),parent_id);
 				
 				$('#date_box').show();
@@ -139,18 +142,14 @@ function default_select(year,month,day,hour,min){
 				});
 
 				$("body").on("click","#action li[data-action='cancel']",function(){
-					$("#date_box").parent().replaceWith( function(){
-						return $(this).contents();
-					});
+					$("#date_box").unwrap();
 					$('#date_box').hide();
 					$('#date_box').remove();
 				});
 				$("body").on("click","#action li[data-action='ok']",function(){
 					var select_datetime = window.time==true ? year+'-'+month+'-'+day+' '+hour+':'+min : year+'-'+month+'-'+day;
 					$this.val(select_datetime);
-					$("#date_box").parent().replaceWith( function(){
-						return $(this).contents();
-					});
+					$("#date_box").unwrap();
 					$('#date_box').hide();
 					$('#date_box').remove();
 				});
@@ -167,11 +166,8 @@ function default_select(year,month,day,hour,min){
 					var now_datetime = window.time==true ? year+'-'+month+'-'+day+' '+hour+':'+min : year+'-'+month+'-'+day;
 
 					$this.val(now_datetime);
-					$('#date_box').hide();
 					default_select();
-					$("#date_box").parent().replaceWith( function(){
-						return $(this).contents();
-					});
+					$("#date_box").unwrap();
 					$('#date_box').hide();
 					$('#date_box').remove();
 					
