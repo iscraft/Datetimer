@@ -156,7 +156,6 @@ function default_select(year,month,day,hour,min){
 					var now_datetime = window.time==true ? year+'-'+month+'-'+day+' '+hour+':'+min : year+'-'+month+'-'+day;
 
 					$this.val(now_datetime);
-					$('#date_box').hide();
 					default_select();
 					$('#date_box').hide();
 					$('#date_box').remove();
