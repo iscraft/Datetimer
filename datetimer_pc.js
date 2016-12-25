@@ -170,7 +170,7 @@ function default_select(year,month,day,hour,min){
 					$("#date_box").unwrap();
 					$('#date_box').hide();
 					$('#date_box').remove();
-					
+
 				});
 				return false; 
 			}
