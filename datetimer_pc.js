@@ -1,5 +1,5 @@
 /*!
-* Datetimer - v0.3 (2016-01-22)
+* Datetimer - v0.4 (2016-12-25)
 * https://github.com/iscraft/Datetimer
 * Copyright 2005-2016 iscraft.com
 */
