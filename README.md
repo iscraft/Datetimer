@@ -47,10 +47,12 @@
 ```html
 <input type="text" name="starttime" id="starttime" placeholder="开始时间" value="" autocomplete="off">
 <input type="text" name="stoptime" id="stoptime" placeholder="结束时间" value="" autocomplete="off">
+<script>
 $(function() {
 	$('#starttime').datetimer({showhm:1});//显示小时分钟
 	$('#stoptime').datetimer({showhm:0});//不显示小时分钟
 });
+</script>
 ```
 
 
