@@ -1,4 +1,4 @@
-#date_box {position: absolute;width:300px;display:none;background: #F5F5F5;-webkit-border-radius:3px;-moz-border-radius:3px;border-radius: 3px; box-shadow : 0 0 0 1px #dbdbdb;}
+#date_box {position: absolute;width:300px;display:none;background: #F5F5F5;-webkit-border-radius:3px;-moz-border-radius:3px;border-radius: 3px; box-shadow : 0 0 0 1px #dbdbdb;z-index:9999}
 #time_box {height:30px;line-height:30px;color: #31b6e7;text-align: center;border-bottom: 1px solid #dbdbdb;}
 #year {width:40%;background-color: #DDCFE6;}
 #month {width:60%;background-color: #E4F1D7;}
