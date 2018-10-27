@@ -3,7 +3,7 @@
 * https://github.com/iscraft/Datetimer
 * Copyright 2005-2016 iscraft.com
 */
-function box(val,parent_id){
+function box(val,parent_id,,showhm){
 	if (val){
 		var now	= new Date(val.replace(/-/g,"/"));
 	}else{
@@ -19,7 +19,7 @@ function box(val,parent_id){
 	min			= now.getMinutes();
 	min			= min<10?'0'+min:min;
 
-	window.time	= val.indexOf(" ") >=0 ? true : false;
+	window.time	= showhm?true:false;
 	var time_element	= window.time == true ? '<ul id="hour"></ul><ul id="min"></ul>' : '';
 	
 	$('#'+parent_id).append('<div id="date_box"><div id="time_box"></div><ul id="year"></ul><ul id="month"></ul><ul id="day"></ul>'+time_element+'<ul id="action"><li data-action="ok">确定</li><li data-action="now">现在</li><li data-action="cancel">取消</li></ul></div>');
@@ -92,7 +92,7 @@ function default_select(year,month,day,hour,min){
 }
 //init
 (function($) {
-	$.fn.datetimer = function() {
+	$.fn.datetimer = function(options) {
 		return this.each(function() {
 			$(this).click(onclick);
 			function onclick() {
@@ -103,7 +103,7 @@ function default_select(year,month,day,hour,min){
 				parent_id = $(this).attr("name")+"_"+$(this).attr("id");
 				$(this).wrap("<div id="+parent_id+"></div>");
 				$('#'+parent_id).css({'display':'inline-block','position':'relative'});
-				box($this.val(),parent_id);
+				box($this.val(),parent_id,options.showhm);
 				
 				$('#date_box').show();
 				$("body").on("click","#year li",function(){
