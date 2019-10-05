@@ -1,0 +1,45 @@
+{
+  "log": {
+        "access": "/tmp/v2access.log",
+        "error": "/tmp/v2error.log",
+        "loglevel": "warning"
+    },
+  "inbound":{
+    "port": 63555,
+    "protocol": "vmess",
+    "settings": {
+      "clients": [
+        {
+          "id": "b66bbaa1-d5a6-409b-af5a-f882ec878207",
+          "level": 1,
+          "alterId": 64
+        }
+      ],
+      "detour": {
+        "to": "dynamicPort"
+      }
+    }
+  },
+  "outbound": {
+    "protocol": "freedom",
+    "settings": {}
+  },
+  "inboundDetour":[
+    {
+      "protocol": "vmess",
+      "port": "44000-49000", // 端口范围
+      "tag": "dynamicPort",
+      "settings": {
+        "default": {
+          "level": 1,
+          "alterId": 32
+        }
+      },
+      "allocate": { // 分配模式
+        "strategy": "random", // 随机开启
+        "concurrency": 5, // 同时开放5个端口
+        "refresh": 240 // 每4小时刷新一次
+      }
+    }
+  ]
+}
